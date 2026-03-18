@@ -137,11 +137,6 @@ class PerceptionProcess:
         imgL_cv = bridge.imgmsg_to_cv2(imgL_ros_msg)
         imgR_cv = bridge.imgmsg_to_cv2(imgR_ros_msg)
 
-        #deixa a imagem em preto e branco.
-        #imgL_cv = cv2.cvtColor(imgL_cv,cv2.COLOR_BGR2GRAY)
-        #imgR_cv = cv2.cvtColor(imgR_cv,cv2.COLOR_BGR2GRAY)
-
-        # Creating an object of StereoSGBM algorithm
         stereo = cv2.StereoSGBM_create(
             minDisparity=0,
             numDisparities=16*11,
@@ -155,18 +150,11 @@ class PerceptionProcess:
             preFilterCap=63,
             mode=cv2.STEREO_SGBM_MODE_SGBM_3WAY
         )
-        # Calculating disparith using the StereoSGBM algorithm
         stereo = stereo.compute(imgL_cv, imgR_cv).astype(np.float32) / 16
-
-        # Calculating disparith using the StereoSGBM algorithm
 
         disp_map = cv2.normalize(stereo,None, 0, 255, cv2.NORM_MINMAX)
         disp_map = np.uint8(disp_map)
-        #disp_map[disp_map < 0] = 0
-        #disp_map[disp_map > 64] = 64
-        #disp_vis = (disp_map / np.max(disp_map) * 255).astype(np.uint8)
-        #disp_vis = cv2.medianBlur(disp_vis, 5)  
-
+        
         return (disp_map, stereo)
     
     def yaml_reader(self, endereco_left, endereco_right):
