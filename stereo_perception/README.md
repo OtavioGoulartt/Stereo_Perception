@@ -12,4 +12,8 @@ A centralized Python base class that encapsulates projective geometry, coordinat
 * Validation (track_validation.py):
 Provides real-time visual comparison between estimated Z-coordinates and Ground Truth data using Matplotlib. This node is essential for monitoring sensory accuracy and quantifying depth estimation errors during live operation.
 
-![image alt](https://github.com/OtavioGoulartt/my_projects/blob/dc4198c646feeb90ee3b3ebec8c33809ef25b3de/stereo_perception/cone_gt_comparison.png)
+![image alt](https://github.com/OtavioGoulartt/my_projects/blob/dc4198c646feeb90ee3b3ebec8c33809ef25b3de/stereo_perception/cone_gt_comparison.png)[]
+
+<img width="2384" height="1792" alt="Screenshot from 2026-03-03 19-54-33" src="https://github.com/user-attachments/assets/a2a16f01-c0e4-4f61-a5b1-0d1db246c9d5" />
+
+<img width="1144" height="860" alt="image" src="https://github.com/user-attachments/assets/0e2ca8ef-1189-4dda-b6a6-4dbd2d59b78d" />
